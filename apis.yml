@@ -1,0 +1,56 @@
+aid: microsoft-fabric
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-fabric/refs/heads/main/apis.yml
+apis:
+  - aid: microsoft-fabric:rest-api
+    name: Microsoft Fabric REST API
+    tags:
+      - Data Analytics
+      - Lakehouse
+      - Data Engineering
+      - Data Platform
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.fabric.microsoft.com/v1/
+    humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
+    properties:
+      - url: https://learn.microsoft.com/en-us/rest/api/fabric/
+        type: Documentation
+    description: >-
+      The Microsoft Fabric REST API provides programmatic access to the
+      unified analytics platform. Developers can manage workspaces,
+      lakehouses, warehouses, data pipelines, notebooks, and other Fabric
+      items. The API supports data engineering, data science, real-time
+      analytics, and business intelligence workloads in a single platform.
+  - aid: microsoft-fabric:sql-connection-api
+    name: Microsoft Fabric SQL Connection
+    tags:
+      - SQL
+      - Data Warehouse
+      - Lakehouse
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://{workspace}.datawarehouse.fabric.microsoft.com/
+    humanURL: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+    properties:
+      - url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+        type: Documentation
+    description: >-
+      Microsoft Fabric provides SQL connectivity to lakehouses and data
+      warehouses through TDS endpoints. Developers can query Fabric data
+      using standard SQL tools, JDBC/ODBC drivers, and client libraries,
+      enabling integration with existing SQL-based applications and
+      reporting tools.
+common:
+  - type: Portal
+    url: https://app.fabric.microsoft.com/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/
+  - type: Getting Started
+    url: https://learn.microsoft.com/en-us/fabric/get-started/
+  - type: Terms of Service
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: Support
+    url: https://support.microsoft.com/
+maintainers:
+  - name: Kin Lane
+    email: kin@apievangelist.com
