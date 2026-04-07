@@ -9,9 +9,9 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Data Analytics
-  - Lakehouse
   - Data Engineering
   - Data Platform
+  - Lakehouse
   - Microsoft
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-fabric/refs/heads/main/apis.yml
 created: '2024-01-01'
@@ -30,9 +30,9 @@ apis:
     baseURL: https://api.fabric.microsoft.com/v1/
     tags:
       - Data Analytics
-      - Lakehouse
       - Data Engineering
       - Data Platform
+      - Lakehouse
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/fabric/
@@ -49,9 +49,9 @@ apis:
     humanURL: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
     baseURL: https://{workspace}.datawarehouse.fabric.microsoft.com/
     tags:
-      - SQL
       - Data Warehouse
       - Lakehouse
+      - SQL
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
