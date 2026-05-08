@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Fabric REST API (Core)
+  description: >-
+    Minimal OpenAPI definition for the Microsoft Fabric Core REST API for
+    workspaces, items (notebooks, semantic models, etc.), and capacities.
+  version: v1
+  x-generated-from: https://learn.microsoft.com/en-us/rest/api/fabric/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://api.fabric.microsoft.com/v1
+    description: Microsoft Fabric REST API
+security:
+  - bearerAuth: []
+tags:
+  - name: Workspaces
+  - name: Items
+  - name: Capacities
+  - name: Connections
+paths:
+  /workspaces:
+    get:
+      tags: [Workspaces]
+      summary: List workspaces
+      operationId: listWorkspaces
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Workspaces]
+      summary: Create workspace
+      operationId: createWorkspace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /workspaces/{workspaceId}:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      tags: [Workspaces]
+      summary: Get workspace
+      operationId: getWorkspace
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [Workspaces]
+      summary: Update workspace
+      operationId: updateWorkspace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Workspaces]
+      summary: Delete workspace
+      operationId: deleteWorkspace
+      responses:
+        '200':
+          description: OK
+  /workspaces/{workspaceId}/items:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      tags: [Items]
+      summary: List items
+      operationId: listItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Items]
+      summary: Create item
+      operationId: createItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+        '202':
+          description: Accepted
+  /workspaces/{workspaceId}/items/{itemId}:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - $ref: '#/components/parameters/ItemId'
+    get:
+      tags: [Items]
+      summary: Get item
+      operationId: getItem
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [Items]
+      summary: Update item
+      operationId: updateItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Items]
+      summary: Delete item
+      operationId: deleteItem
+      responses:
+        '200':
+          description: OK
+  /workspaces/{workspaceId}/items/{itemId}/getDefinition:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - $ref: '#/components/parameters/ItemId'
+    post:
+      tags: [Items]
+      summary: Get item definition
+      operationId: getItemDefinition
+      responses:
+        '200':
+          description: OK
+        '202':
+          description: Accepted
+  /workspaces/{workspaceId}/items/{itemId}/updateDefinition:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - $ref: '#/components/parameters/ItemId'
+    post:
+      tags: [Items]
+      summary: Update item definition
+      operationId: updateItemDefinition
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+        '202':
+          description: Accepted
+  /workspaces/{workspaceId}/items/{itemId}/move:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - $ref: '#/components/parameters/ItemId'
+    post:
+      tags: [Items]
+      summary: Move item
+      operationId: moveItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+  /workspaces/{workspaceId}/items/{itemId}/connections:
+    parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - $ref: '#/components/parameters/ItemId'
+    get:
+      tags: [Items]
+      summary: List item connections
+      operationId: listItemConnections
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /capacities:
+    get:
+      tags: [Capacities]
+      summary: List capacities
+      operationId: listCapacities
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /connections:
+    get:
+      tags: [Connections]
+      summary: List connections
+      operationId: listConnections
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Connections]
+      summary: Create connection
+      operationId: createConnection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    WorkspaceId:
+      in: path
+      name: workspaceId
+      required: true
+      schema: { type: string }
+    ItemId:
+      in: path
+      name: itemId
+      required: true
+      schema: { type: string }
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true

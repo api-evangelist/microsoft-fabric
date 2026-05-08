@@ -38,6 +38,8 @@ apis:
         url: https://learn.microsoft.com/en-us/rest/api/fabric/
       - type: Getting Started
         url: https://learn.microsoft.com/en-us/fabric/get-started/
+      - url: openapi/microsoft-fabric-openapi.yml
+        type: OpenAPI
   - aid: microsoft-fabric:sql-connection-api
     name: Microsoft Fabric SQL Connection
     description: >-
