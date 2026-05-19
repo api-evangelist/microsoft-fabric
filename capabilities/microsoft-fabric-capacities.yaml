@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Fabric REST API (Core) — Capacities
+  description: 'Microsoft Fabric REST API (Core) — Capacities. 1 operations. Lead operation: List capacities. Self-contained
+    Naftiko capability covering one Microsoft Fabric business surface.'
+  tags:
+  - Microsoft Fabric
+  - Capacities
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_FABRIC_API_KEY: MICROSOFT_FABRIC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-fabric-capacities
+    baseUri: https://api.fabric.microsoft.com/v1
+    description: Microsoft Fabric REST API (Core) — Capacities business capability. Self-contained, no shared references.
+    resources:
+    - name: capacities
+      path: /capacities
+      operations:
+      - name: listcapacities
+        method: GET
+        description: List capacities
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_FABRIC_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-fabric-capacities-rest
+    port: 8080
+    description: REST adapter for Microsoft Fabric REST API (Core) — Capacities. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/capacities
+      name: capacities
+      description: REST surface for capacities.
+      operations:
+      - method: GET
+        name: listcapacities
+        description: List capacities
+        call: microsoft-fabric-capacities.listcapacities
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-fabric-capacities-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Fabric REST API (Core) — Capacities. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-capacities
+      description: List capacities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-fabric-capacities.listcapacities
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,197 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Fabric REST API (Core) — Workspaces
+  description: 'Microsoft Fabric REST API (Core) — Workspaces. 5 operations. Lead operation: List workspaces. Self-contained
+    Naftiko capability covering one Microsoft Fabric business surface.'
+  tags:
+  - Microsoft Fabric
+  - Workspaces
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_FABRIC_API_KEY: MICROSOFT_FABRIC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-fabric-workspaces
+    baseUri: https://api.fabric.microsoft.com/v1
+    description: Microsoft Fabric REST API (Core) — Workspaces business capability. Self-contained, no shared references.
+    resources:
+    - name: workspaces
+      path: /workspaces
+      operations:
+      - name: listworkspaces
+        method: GET
+        description: List workspaces
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createworkspace
+        method: POST
+        description: Create workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: workspaces-workspaceId
+      path: /workspaces/{workspaceId}
+      operations:
+      - name: getworkspace
+        method: GET
+        description: Get workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateworkspace
+        method: PATCH
+        description: Update workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteworkspace
+        method: DELETE
+        description: Delete workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_FABRIC_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-fabric-workspaces-rest
+    port: 8080
+    description: REST adapter for Microsoft Fabric REST API (Core) — Workspaces. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/workspaces
+      name: workspaces
+      description: REST surface for workspaces.
+      operations:
+      - method: GET
+        name: listworkspaces
+        description: List workspaces
+        call: microsoft-fabric-workspaces.listworkspaces
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createworkspace
+        description: Create workspace
+        call: microsoft-fabric-workspaces.createworkspace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/workspaces/{workspaceid}
+      name: workspaces-workspaceid
+      description: REST surface for workspaces-workspaceId.
+      operations:
+      - method: GET
+        name: getworkspace
+        description: Get workspace
+        call: microsoft-fabric-workspaces.getworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateworkspace
+        description: Update workspace
+        call: microsoft-fabric-workspaces.updateworkspace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteworkspace
+        description: Delete workspace
+        call: microsoft-fabric-workspaces.deleteworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-fabric-workspaces-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Fabric REST API (Core) — Workspaces. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-workspaces
+      description: List workspaces
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-fabric-workspaces.listworkspaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-workspace
+      description: Create workspace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-fabric-workspaces.createworkspace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-workspace
+      description: Get workspace
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-fabric-workspaces.getworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-workspace
+      description: Update workspace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-fabric-workspaces.updateworkspace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-workspace
+      description: Delete workspace
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-fabric-workspaces.deleteworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
