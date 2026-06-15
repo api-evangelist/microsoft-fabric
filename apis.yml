@@ -1,8 +1,9 @@
 aid: microsoft-fabric
 name: Microsoft Fabric
-description: Microsoft Fabric is a unified analytics platform that brings together data engineering, data science, real-time
-  analytics, and business intelligence. It provides REST APIs for managing workspaces, lakehouses, warehouses, data pipelines,
-  notebooks, and other Fabric items.
+description: >-
+  Microsoft Fabric is a unified analytics platform that brings together data engineering, data science, real-time
+  analytics, and business intelligence. It provides REST APIs for managing workspaces, lakehouses, warehouses, data
+  pipelines, notebooks, and other Fabric items.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -18,45 +19,39 @@ specificationVersion: '0.19'
 apis:
   - aid: microsoft-fabric:rest-api
     name: Microsoft Fabric REST API
-    description: The Microsoft Fabric REST API provides programmatic access to the unified analytics platform. Developers can
-      manage workspaces, lakehouses, warehouses, data pipelines, notebooks, and other Fabric items. The API supports data engineering,
-      data science, real-time analytics, and business intelligence workloads in a single platform.
+    description: >-
+      The Microsoft Fabric REST API provides programmatic access to the unified analytics platform. Developers can
+      manage workspaces, lakehouses, warehouses, data pipelines, notebooks, and other Fabric items. The API supports
+      data engineering, data science, real-time analytics, and business intelligence workloads in a single platform.
     humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
     baseURL: https://api.fabric.microsoft.com/v1/
     tags:
-    - Data Analytics
-    - Data Engineering
-    - Data Platform
-    - Lakehouse
+      - Data Analytics
+      - Data Engineering
+      - Data Platform
+      - Lakehouse
     properties:
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/rest/api/fabric/
-    - type: GettingStarted
-      url: https://learn.microsoft.com/en-us/fabric/get-started/
-    - url: openapi/microsoft-fabric-openapi.yml
-      type: OpenAPI
-    - type: NaftikoCapability
-      url: capabilities/microsoft-fabric-capacities.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-fabric-connections.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-fabric-items.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-fabric-workspaces.yaml
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/fabric/
+      - type: GettingStarted
+        url: https://learn.microsoft.com/en-us/fabric/get-started/
+      - url: openapi/microsoft-fabric-openapi.yml
+        type: OpenAPI
   - aid: microsoft-fabric:sql-connection-api
     name: Microsoft Fabric SQL Connection
-    description: Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints. Developers
-      can query Fabric data using standard SQL tools, JDBC/ODBC drivers, and client libraries, enabling integration with existing
-      SQL-based applications and reporting tools.
+    description: >-
+      Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints. Developers can
+      query Fabric data using standard SQL tools, JDBC/ODBC drivers, and client libraries, enabling integration with
+      existing SQL-based applications and reporting tools.
     humanURL: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
     baseURL: https://{workspace}.datawarehouse.fabric.microsoft.com/
     tags:
-    - Data Warehouse
-    - Lakehouse
-    - SQL
+      - Data Warehouse
+      - Lakehouse
+      - SQL
     properties:
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
 common:
   - type: GitHubOrganization
     url: https://github.com/microsoft
