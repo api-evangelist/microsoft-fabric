@@ -53,6 +53,12 @@ apis:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
 common:
+  - type: VulnerabilityDisclosure
+    url: security/microsoft-fabric-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/microsoft-fabric-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-fabric-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/microsoft
   - type: LinkedIn
