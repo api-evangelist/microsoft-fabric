@@ -3,16 +3,13 @@
   "feeds": [
     {
       "source": "https://community.fabric.microsoft.com/oxcrx34285/rss/board?board.id=fbc_fabricupdatesblogs",
-      "feed_url": "https://community.fabric.microsoft.com/oxcrx34285/rss/board?board.id=fbc_fabricupdatesblogs",
-      "title": "",
-      "saved": 11,
-      "method": "feed"
+      "error": "HTTPError"
     },
     {
       "source": "https://learn.microsoft.com/en-us/fabric/security/permission-model",
       "error": "HTTPError"
     }
   ],
-  "post_count": 94,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 99,
+  "fetched": "2026-07-11T11:50:51Z"
 }
