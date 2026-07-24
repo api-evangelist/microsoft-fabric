@@ -1,0 +1,60 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Fabric REST API (Core) Capacities Connections API
+  description: Minimal OpenAPI definition for the Microsoft Fabric Core REST API for workspaces, items (notebooks, semantic models, etc.), and capacities.
+  version: v1
+  x-generated-from: https://learn.microsoft.com/en-us/rest/api/fabric/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.fabric.microsoft.com/v1
+  description: Microsoft Fabric REST API
+security:
+- bearerAuth: []
+tags:
+- name: Connections
+paths:
+  /connections:
+    get:
+      tags:
+      - Connections
+      summary: List connections
+      operationId: listConnections
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - Connections
+      summary: Create connection
+      operationId: createConnection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

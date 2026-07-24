@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Fabric REST API (Core) Capacities Workspaces API
+  description: Minimal OpenAPI definition for the Microsoft Fabric Core REST API for workspaces, items (notebooks, semantic models, etc.), and capacities.
+  version: v1
+  x-generated-from: https://learn.microsoft.com/en-us/rest/api/fabric/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.fabric.microsoft.com/v1
+  description: Microsoft Fabric REST API
+security:
+- bearerAuth: []
+tags:
+- name: Workspaces
+paths:
+  /workspaces:
+    get:
+      tags:
+      - Workspaces
+      summary: List workspaces
+      operationId: listWorkspaces
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - Workspaces
+      summary: Create workspace
+      operationId: createWorkspace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /workspaces/{workspaceId}:
+    parameters:
+    - $ref: '#/components/parameters/WorkspaceId'
+    get:
+      tags:
+      - Workspaces
+      summary: Get workspace
+      operationId: getWorkspace
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Workspaces
+      summary: Update workspace
+      operationId: updateWorkspace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Workspaces
+      summary: Delete workspace
+      operationId: deleteWorkspace
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  parameters:
+    WorkspaceId:
+      in: path
+      name: workspaceId
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
