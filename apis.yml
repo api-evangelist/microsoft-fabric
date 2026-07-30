@@ -5,7 +5,20 @@ description: >-
   analytics, and business intelligence. It provides REST APIs for managing workspaces, lakehouses, warehouses, data
   pipelines, notebooks, and other Fabric items.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-fabric.png
 tags:
   - Data Analytics
   - Data Engineering
@@ -17,41 +30,77 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: microsoft-fabric:rest-api
-    name: Microsoft Fabric REST API
-    description: >-
-      The Microsoft Fabric REST API provides programmatic access to the unified analytics platform. Developers can
-      manage workspaces, lakehouses, warehouses, data pipelines, notebooks, and other Fabric items. The API supports
-      data engineering, data science, real-time analytics, and business intelligence workloads in a single platform.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
-    baseURL: https://api.fabric.microsoft.com/v1/
-    tags:
-      - Data Analytics
-      - Data Engineering
-      - Data Platform
-      - Lakehouse
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/fabric/
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/fabric/get-started/
-      - url: openapi/microsoft-fabric-openapi.yml
-        type: OpenAPI
-  - aid: microsoft-fabric:sql-connection-api
-    name: Microsoft Fabric SQL Connection
-    description: >-
-      Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints. Developers can
-      query Fabric data using standard SQL tools, JDBC/ODBC drivers, and client libraries, enabling integration with
-      existing SQL-based applications and reporting tools.
-    humanURL: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
-    baseURL: https://{workspace}.datawarehouse.fabric.microsoft.com/
-    tags:
-      - Data Warehouse
-      - Lakehouse
-      - SQL
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+- aid: microsoft-fabric:sql-connection-api
+  name: Microsoft Fabric SQL Connection
+  description: >-
+    Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints.
+    Developers can query Fabric data using standard SQL tools, JDBC/ODBC drivers, and client libraries,
+    enabling integration with existing SQL-based applications and reporting tools.
+  humanURL: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+  baseURL: https://{workspace}.datawarehouse.fabric.microsoft.com/
+  tags:
+  - Data Warehouse
+  - Lakehouse
+  - SQL
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity
+- aid: microsoft-fabric:microsoft-fabric-capacities-api
+  name: Microsoft Fabric Capacities API
+  description: The Capacities API from Microsoft Fabric — 1 operation(s) for capacities.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
+  baseURL: https://api.fabric.microsoft.com/v1/
+  tags:
+  - Capacities
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-fabric-capacities-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/fabric/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/fabric/get-started/
+- aid: microsoft-fabric:microsoft-fabric-connections-api
+  name: Microsoft Fabric Connections API
+  description: The Connections API from Microsoft Fabric — 1 operation(s) for connections.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
+  baseURL: https://api.fabric.microsoft.com/v1/
+  tags:
+  - Connections
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-fabric-connections-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/fabric/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/fabric/get-started/
+- aid: microsoft-fabric:microsoft-fabric-items-api
+  name: Microsoft Fabric Items API
+  description: The Items API from Microsoft Fabric — 6 operation(s) for items.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
+  baseURL: https://api.fabric.microsoft.com/v1/
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-fabric-items-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/fabric/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/fabric/get-started/
+- aid: microsoft-fabric:microsoft-fabric-workspaces-api
+  name: Microsoft Fabric Workspaces API
+  description: The Workspaces API from Microsoft Fabric — 2 operation(s) for workspaces.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
+  baseURL: https://api.fabric.microsoft.com/v1/
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-fabric-workspaces-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/fabric/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/fabric/get-started/
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-fabric-agentic-access.yml
