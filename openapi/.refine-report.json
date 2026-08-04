@@ -1,0 +1,20 @@
+{
+  "provider": "microsoft-fabric",
+  "sources": [
+    "microsoft-fabric-capacities-api-openapi.yml",
+    "microsoft-fabric-connections-api-openapi.yml",
+    "microsoft-fabric-items-api-openapi.yml",
+    "microsoft-fabric-workspaces-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-fabric-capacities-api-openapi.yml",
+    "microsoft-fabric-connections-api-openapi.yml",
+    "microsoft-fabric-items-api-openapi.yml",
+    "microsoft-fabric-workspaces-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

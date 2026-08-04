@@ -2,14 +2,10 @@
   "repo": "microsoft-fabric",
   "feeds": [
     {
-      "source": "https://community.fabric.microsoft.com/oxcrx34285/rss/board?board.id=fbc_fabricupdatesblogs",
-      "error": "HTTPError"
-    },
-    {
       "source": "https://learn.microsoft.com/en-us/fabric/security/permission-model",
       "error": "HTTPError"
     }
   ],
   "post_count": 99,
-  "fetched": "2026-07-11T11:50:51Z"
+  "fetched": "2026-08-01T15:49:00Z"
 }
