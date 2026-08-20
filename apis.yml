@@ -79,6 +79,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
   baseURL: https://api.fabric.microsoft.com/v1/
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
