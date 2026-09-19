@@ -108,6 +108,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/fabric/
   baseURL: https://api.fabric.microsoft.com/v1/
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
