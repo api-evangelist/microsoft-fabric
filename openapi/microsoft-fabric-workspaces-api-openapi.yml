@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Fabric REST API (Core) Capacities Workspaces API
+  title: Microsoft Fabric REST API (Core) Workspaces API
   description: Minimal OpenAPI definition for the Microsoft Fabric Core REST API for workspaces, items (notebooks, semantic models, etc.), and capacities.
   version: v1
   x-generated-from: https://learn.microsoft.com/en-us/rest/api/fabric/
