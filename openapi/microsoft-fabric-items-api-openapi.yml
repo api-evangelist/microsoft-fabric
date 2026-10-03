@@ -147,18 +147,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericList'
 components:
-  schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
-    GenericList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenericObject'
-      additionalProperties: true
   parameters:
     ItemId:
       in: path
@@ -172,6 +160,18 @@ components:
       required: true
       schema:
         type: string
+  schemas:
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
