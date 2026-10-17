@@ -160,15 +160,15 @@ components:
       type: object
       additionalProperties: true
   parameters:
-    WorkspaceId:
-      in: path
-      name: workspaceId
-      required: true
-      schema:
-        type: string
     ItemId:
       in: path
       name: itemId
+      required: true
+      schema:
+        type: string
+    WorkspaceId:
+      in: path
+      name: workspaceId
       required: true
       schema:
         type: string
