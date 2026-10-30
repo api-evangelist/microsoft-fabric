@@ -1,4 +1,4 @@
-# Microsoft Fabric (microsoft-fabric)
+# Microsoft Fabric
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,87 +66,132 @@
 
 Microsoft Fabric is a unified analytics platform that brings together data engineering, data science, real-time analytics, and business intelligence. It provides REST APIs for managing workspaces, lakehouses, warehouses, data pipelines, notebooks, and other Fabric items.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-fabric/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-fabric/refs/heads/main/apis.yml)
+**Areas:** Data Analytics · Data Engineering · Data Platform · Lakehouse · Microsoft
 
-## Scope
+## Microsoft Fabric on APIs.io
 
-- **Type:** Index
+Everything profiled for Microsoft Fabric is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-fabric/](https://apis.io/providers/microsoft-fabric/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Data Analytics
-- Data Engineering
-- Data Platform
-- Lakehouse
-- Microsoft
+- [Microsoft Fabric SQL Connection](https://apis.io/apis/microsoft-fabric/sql-connection-api/) — Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints. Developers can query Fabric data using standard SQL…
+- [Microsoft Fabric Capacities API](https://apis.io/apis/microsoft-fabric/microsoft-fabric-capacities-api/) — The Capacities API from Microsoft Fabric — 1 operation(s) for capacities.
+- [Microsoft Fabric Connections API](https://apis.io/apis/microsoft-fabric/microsoft-fabric-connections-api/) — The Connections API from Microsoft Fabric — 1 operation(s) for connections.
+- [Microsoft Fabric Items API](https://apis.io/apis/microsoft-fabric/microsoft-fabric-items-api/) — The Items API from Microsoft Fabric — 6 operation(s) for items.
+- [Microsoft Fabric Workspaces API](https://apis.io/apis/microsoft-fabric/microsoft-fabric-workspaces-api/) — The Workspaces API from Microsoft Fabric — 2 operation(s) for workspaces.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Microsoft Fabric REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Microsoft Fabric REST API provides programmatic access to the unified analytics platform. Developers can manage workspaces, lakehouses, warehouses, data pipelines, notebooks, and other Fabric items. The API supports data engineering, data science, real-time analytics, and business intelligence workloads in a single platform.
+- [Microsoft Fabric Agentic Access](https://apis.io/agentic-access/microsoft-fabric/microsoft-fabric-agentic-access/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/rest/api/fabric/](https://learn.microsoft.com/en-us/rest/api/fabric/)
-- **Base URL:** `https://api.fabric.microsoft.com/v1/`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Data Analytics
-- Data Engineering
-- Data Platform
-- Lakehouse
+- [Microsoft Fabric REST API (Core)](https://apis.io/collections/microsoft-fabric/open-microsoft-fabric/)
+- [Microsoft Fabric REST API (Core) Capacities API](https://apis.io/collections/microsoft-fabric/open-microsoft-fabric-capacities-api/)
+- [Microsoft Fabric REST API (Core) Capacities Connections API](https://apis.io/collections/microsoft-fabric/open-microsoft-fabric-connections-api/)
+- [Microsoft Fabric REST API (Core) Capacities Items API](https://apis.io/collections/microsoft-fabric/open-microsoft-fabric-items-api/)
+- [Microsoft Fabric REST API (Core) Capacities Workspaces API](https://apis.io/collections/microsoft-fabric/open-microsoft-fabric-workspaces-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/fabric/)
-- [Getting Started](https://learn.microsoft.com/en-us/fabric/get-started/)
-- [OpenAPI](openapi/microsoft-fabric-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-fabric.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-fabric.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Microsoft Fabric SQL Connection
+- [Microsoft Fabric Authentication](https://apis.io/security/microsoft-fabric/microsoft-fabric-authentication/)
+- [Microsoft Fabric Domain Security](https://apis.io/security/microsoft-fabric/microsoft-fabric-domain-security/)
+- [Microsoft Fabric Vulnerability Disclosure](https://apis.io/security/microsoft-fabric/microsoft-fabric-vulnerability-disclosure/)
 
-Microsoft Fabric provides SQL connectivity to lakehouses and data warehouses through TDS endpoints. Developers can query Fabric data using standard SQL tools, JDBC/ODBC drivers, and client libraries, enabling integration with existing SQL-based applications and reporting tools.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity)
-- **Base URL:** `https://{workspace}.datawarehouse.fabric.microsoft.com/`
+Published plans, tiers and prices.
 
-#### Tags
+- [Microsoft Fabric Plans Pricing](https://apis.io/plans/microsoft-fabric/microsoft-fabric-plans-pricing/)
 
-- Data Warehouse
-- Lakehouse
-- SQL
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity)
-- [Postman Collection](collections/microsoft-fabric.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-fabric.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Fabric Rate Limits](https://apis.io/rate-limits/microsoft-fabric/microsoft-fabric-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHub Organization](https://github.com/microsoft)
-- [LinkedIn](https://www.linkedin.com/showcase/microsoftfabric)
-- [Portal](https://app.fabric.microsoft.com/)
+What the API costs to run, by operation.
+
+- [Microsoft Fabric Finops](https://apis.io/finops/microsoft-fabric/microsoft-fabric-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.microsoft.com/en-us/microsoft-fabric)
 - [Documentation](https://learn.microsoft.com/en-us/fabric/)
-- [Getting Started](https://learn.microsoft.com/en-us/fabric/get-started/)
+- [Getting started](https://learn.microsoft.com/en-us/fabric/get-started/)
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/)
-- [Authentication](https://learn.microsoft.com/en-us/fabric/security/permission-model)
-- [Blog](https://blog.fabric.microsoft.com/)
-- [Community](https://community.fabric.microsoft.com/)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
 - [Support](https://support.microsoft.com/)
-- [Status Page](https://status.fabric.microsoft.com/)
-- [Integrations](https://www.microsoft.com/en-us/marketplace)
+- [Blog](https://blog.fabric.microsoft.com/)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/microsoft)
+- [Status](https://status.fabric.microsoft.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 41.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 46.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-fabric/](https://apis.io/providers/microsoft-fabric/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Fabric: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-fabric/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
